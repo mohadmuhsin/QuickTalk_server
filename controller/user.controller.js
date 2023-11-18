@@ -3,7 +3,6 @@ const bcrypt  = require ('bcrypt')
 const { Validate } = require('../validations/user_validations');
 const Joi = require('joi');
 const jwt = require('jsonwebtoken');
-const { use } = require('../routes/user_routes');
 const Connection = require('../model/connection_model');
 const Message = require('../model/message_model');
 require('dotenv').config();
@@ -53,6 +52,7 @@ module.exports = {
 
     async login(req, res) {
         try {
+            console.log("holo");
             const { email, password } = req.body
             const userData = {
                 email: email,
