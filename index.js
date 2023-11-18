@@ -14,7 +14,7 @@ const server = app.listen(3000, () => {
 intializeSocket(server)
 
 // <------------------mongoose connection------------------->
-mongoose.connect("mongodb://127.0.0.1:27017/Real-time_Polling", {
+mongoose.connect(process.env.MONGO, {
 }).then(() => {
     console.log("Connected to MongoDB");
 }).catch((error) => {
